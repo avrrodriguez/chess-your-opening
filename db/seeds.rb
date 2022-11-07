@@ -69,3 +69,9 @@ Study.create!(
   opening_id: 3,
   notes: "love it",
 )
+
+Resource.create!(
+  opening_id: 1,
+  link: "Queens Gambit Book",
+  resource_type: "Book",
+)
