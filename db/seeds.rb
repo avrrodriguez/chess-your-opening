@@ -75,3 +75,11 @@ Resource.create!(
   link: "Queens Gambit Book",
   resource_type: "Book",
 )
+
+CommonPosition.create!(
+  name: "Queen's Gambit Declined",
+  description: "Closed position",
+  image_url: "image",
+  variation: "1. d4 d5 2. c4 e6",
+  opening_id: 1,
+)
