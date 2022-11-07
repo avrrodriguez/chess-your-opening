@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :openings
   resources :studies
+  resources :common_positions
+  resources :resources
 
   post "/users", controller: "users", action: "create"
   post "/sessions", controller: "sessions", action: "create"

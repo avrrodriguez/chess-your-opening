@@ -1,4 +1,5 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njc5NDMyNjV9.A_zVxqoSy2MBEJpYS9ZfXCDnxSElIUfkZt0QBjv5nuU
+@admin = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njc5NDM2NDZ9.S4fsoOWp_Wh1xqm6BVivH5_REfFa9_v2jexoaCxxpWM
 
 ### Openings Index Action
 GET http://localhost:3000/openings.json
@@ -8,6 +9,7 @@ GET http://localhost:3000/openings/1.json
 
 ### Openings Create Action
 POST http://localhost:3000/openings.json
+Authorization: Bearer {{admin}}
 Content-Type: application/json
 
 {
@@ -19,7 +21,7 @@ Content-Type: application/json
 }
 
 ### Opening Update Action
-PATCH http://localhost:3000/openings/5.json
+PATCH http://localhost:3000/openings/6.json
 Content-Type: application/json
 
 {
@@ -27,8 +29,8 @@ Content-Type: application/json
 }
 
 ### Opening Destroy Action
-DELETE http://localhost:3000/openings/5.json
-
+DELETE http://localhost:3000/openings/6.json
+Authorization: Bearer {{admin}}
 
 ### Studies Index Action
 GET http://localhost:3000/studies.json
@@ -74,6 +76,33 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "Gary@email.com",
+  "email": "capablanca@email.com",
   "password": "password"
 }
+
+
+### Resources Create Action
+POST http://localhost:3000/resources.json
+Authorization: Bearer {{admin}}
+Content-Type: application/json
+
+{
+  "opening_id": 2,
+  "link": "test",
+  "resource_type": "Online"
+}
+
+### Resources Update Action
+PATCH http://localhost:3000/resources/2.json
+Authorization: Bearer {{admin}}
+Content-Type: application/json
+
+{
+  "opening_id": 3,
+  "link": 2,
+  "resource_type": "Online"
+}
+
+### Resources Delete Action
+DELETE http://localhost:3000/resources/2.json
+Authorization: Bearer {{admin}}
