@@ -1,4 +1,4 @@
-@jwt = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njc5NDI3MDd9.CzRJLkXall9M6X7ElP_gZbcUryaAGNhT9S3JjKt4jyA"
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njc5NDMyNjV9.A_zVxqoSy2MBEJpYS9ZfXCDnxSElIUfkZt0QBjv5nuU
 
 ### Openings Index Action
 GET http://localhost:3000/openings.json
@@ -38,10 +38,10 @@ GET http://localhost:3000/studies/1.json
 
 ### Studies Create Action
 POST http://localhost:3000/studies.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "user_id": 2,
   "opening_id": 3,
   "notes": "yes of course",
   "public": false

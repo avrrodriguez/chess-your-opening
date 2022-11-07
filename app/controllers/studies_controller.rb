@@ -14,7 +14,7 @@ class StudiesController < ApplicationController
 
   def create
     study = Study.new(
-      user_id: params["user_id"],
+      user_id: current_user.id,
       opening_id: params["opening_id"],
       notes: params["notes"],
       public: params["public"],
@@ -28,7 +28,6 @@ class StudiesController < ApplicationController
 
   def update
     study = Study.find_by(id: params["id"])
-    study.user_id = params["user_id"] || study.user_id
     study.opening_id = params["opening_id"] || study.opening_id
     study.notes = params["notes"] || study.notes
     study.public = params["public"] || study.public
