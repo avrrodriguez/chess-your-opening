@@ -27,6 +27,38 @@ Content-Type: application/json
 ### Opening Destroy Action
 DELETE http://localhost:3000/openings/5.json
 
+
+### Studies Index Action
+GET http://localhost:3000/studies.json
+
+### Studies Show Action
+GET http://localhost:3000/studies/1.json
+
+### Studies Create Action
+POST http://localhost:3000/studies.json
+Content-Type: application/json
+
+{
+  "user_id": 2,
+  "opening_id": 3,
+  "notes": "yes of course",
+  "public": false
+}
+
+### Studies Update Action
+PATCH http://localhost:3000/studies/4.json
+Content-Type: application/json
+
+{
+  "user_id": 3,
+  "opening_id": 1,
+  "notes": "well that sucks"
+}
+
+### Studies Destroy Action
+DELETE http://localhost:3000/studies/4.json
+
+
 ### Users Create Action
 POST http://localhost:3000/users.json
 Content-Type: application/json

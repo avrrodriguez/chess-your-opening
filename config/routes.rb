@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # root "openings#index"
 
   resources :openings
+  resources :studies
 
   post "/users", controller: "users", action: "create"
 end
