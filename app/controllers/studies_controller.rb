@@ -1,4 +1,6 @@
 class StudiesController < ApplicationController
+  before_action :authenticate_user, except: [:index, :show]
+
   def index
     studies = Study.all.order(:id)
     render json: studies.as_json

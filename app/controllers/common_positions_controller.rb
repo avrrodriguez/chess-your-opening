@@ -1,0 +1,2 @@
+class CommonPositionsController < ApplicationController
+end
