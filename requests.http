@@ -1,0 +1,36 @@
+### Openings Index Action
+GET http://localhost:3000/openings.json
+
+### Openings Show Action
+GET http://localhost:3000/openings/1.json
+
+### Openings Create Action
+POST http://localhost:3000/openings.json
+Content-Type: application/json
+
+{
+  "name": "test opening",
+  "image_url": "test image",
+  "description": "test description",
+  "difficulty": "test",
+  "variation": ""
+}
+
+### Opening Update Action
+PATCH http://localhost:3000/openings/5.json
+Content-Type: application/json
+
+{
+  "variation": "test patch"
+}
+
+### Opening Destroy Action
+DELETE http://localhost:3000/openings/5.json
+
+### Users Create Action
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "email": "chessfan@test.com"
+}
