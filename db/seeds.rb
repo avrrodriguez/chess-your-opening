@@ -49,3 +49,23 @@ Opening.create!(
   difficulty: "Hard",
   variation: "1. e4 c5",
 )
+
+Study.create!(
+  user_id: 1,
+  opening_id: 1,
+  notes: "very good",
+  public: true,
+)
+
+Study.create!(
+  user_id: 1,
+  opening_id: 3,
+  notes: "very nice",
+  public: false,
+)
+
+Study.create!(
+  user_id: 2,
+  opening_id: 3,
+  notes: "love it",
+)
