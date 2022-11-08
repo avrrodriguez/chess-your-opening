@@ -106,3 +106,33 @@ Content-Type: application/json
 ### Resources Delete Action
 DELETE http://localhost:3000/resources/2.json
 Authorization: Bearer {{admin}}
+
+### CommonPositions Create Action
+POST http://localhost:3000/common_positions.json
+Content-Type: application/json
+Authorization: Bearer {{admin}}
+
+{
+  "description": "test",
+  "image_url": "test",
+  "variation": "test",
+  "opening_id": 1,
+  "name": "test"
+}
+
+### CommonPositions Update Action
+PATCH http://localhost:3000/common_positions/2.json
+Authorization: Bearer {{admin}}
+Content-Type: application/json
+
+{
+  "description": "test",
+  "image_url": "test patch",
+  "variation": "test patch",
+  "opening_id": 2,
+  "name": "test patch"
+}
+
+### CommonPositions Delete Action
+DELETE http://localhost:3000/common_positions/2.json
+Authorization: Bearer {{admin}}
