@@ -1,0 +1,10 @@
+{
+  id: @opening.id,
+  name: @opening.name,
+  image_url: @opening.image_url,
+  description: @opening.description,
+  difficulty: @opening.difficulty,
+  variation: @opening.variation,
+  resources: @opening.resources,
+  common_positions: @opening.common_positions,
+}
