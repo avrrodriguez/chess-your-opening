@@ -1,0 +1,10 @@
+@studies.map do |study|
+  {
+    id: study.id,
+    user_id: study.user_id,
+    opening_id: study.opening_id,
+    notes: study.notes,
+    public: study.public,
+    opening: study.opening,
+  }
+end

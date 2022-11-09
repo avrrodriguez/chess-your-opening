@@ -136,3 +136,7 @@ Content-Type: application/json
 ### CommonPositions Delete Action
 DELETE http://localhost:3000/common_positions/2.json
 Authorization: Bearer {{admin}}
+
+
+### chess query
+GET https://explorer.lichess.ovh/lichess?variant=standard&speeds=rapid,classical&ratings=2600&fen=rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2&recentGames=5

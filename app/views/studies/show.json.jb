@@ -1,0 +1,5 @@
+{
+  id: @study.id,
+  created_at: @study.created_at,
+  updated_at: @study.updated_at
+}
