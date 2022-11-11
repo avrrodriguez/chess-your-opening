@@ -36,7 +36,7 @@ Authorization: Bearer {{admin}}
 GET http://localhost:3000/studies.json
 
 ### Studies Show Action
-GET http://localhost:3000/studies/1.json
+GET http://localhost:3000/studies/7.json
 
 ### Studies Create Action
 POST http://localhost:3000/studies.json

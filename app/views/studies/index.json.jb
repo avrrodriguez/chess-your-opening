@@ -6,5 +6,7 @@
     notes: study.notes,
     public: study.public,
     opening: study.opening,
+    resources: study.opening.resources,
+    common_positions: study.opening.common_positions,
   }
 end

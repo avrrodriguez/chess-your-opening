@@ -1,5 +1,12 @@
 {
   id: @study.id,
+  user_id: @study.user_id,
+  opening_id: @study.opening_id,
+  notes: @study.notes,
+  public: @study.public,
+  opening: @study.opening,
+  resources: @study.opening.resources,
+  common_positions: @study.opening.common_positions,
   created_at: @study.created_at,
-  updated_at: @study.updated_at
+  updated_at: @study.updated_at,
 }
