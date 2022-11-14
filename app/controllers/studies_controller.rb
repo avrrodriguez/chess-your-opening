@@ -2,7 +2,12 @@ class StudiesController < ApplicationController
   before_action :authenticate_user, except: [:index, :show]
 
   def index
-    @studies = Study.all.order(:id)
+    if current_user
+      @studies = Study.where(public: true).or(Study.where(user_id: current_user.id)).order(:id)
+    else
+      @studies = Study.where(public: true)
+    end
+
     render template: "studies/index"
   end
 
