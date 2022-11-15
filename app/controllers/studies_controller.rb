@@ -5,7 +5,7 @@ class StudiesController < ApplicationController
     if current_user
       @studies = Study.where(public: true).or(Study.where(user_id: current_user.id)).order(:id)
     else
-      @studies = Study.where(public: true)
+      @studies = Study.where(public: true).order(:id)
     end
 
     render template: "studies/index"
