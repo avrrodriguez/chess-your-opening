@@ -25,7 +25,7 @@ You can test web requests as documented in the `requests.http` file.
 rails server
 ```
 
-- To make studies public or private change it through the rails console. The number inside find is replaced by the id of the study whos public you want to change.
+To make studies public or private change it through the rails console. The number inside find is replaced by the id of the study whos public you want to change.
 
 ```bash
 rails c
