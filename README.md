@@ -42,8 +42,3 @@ irb(main) > user = User.find(1)
 irb(main) > user.admin = true # or user.admin = false if you want to remove admin
 irb(main) > user.save
 ```
-
-## Roadmap
-
-- Make model for games, fen put in them, and change how requests with fen are made so that it gets it from the model.
-- Find way to automatically get fen when adding openings.
