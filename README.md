@@ -25,4 +25,13 @@ You can test web requests as documented in the `requests.http` file.
 rails server
 ```
 
+- To make studies public or private change it through the rails console.
+
+```bash
+rails c
+irb(main) > study = Study.find(1)
+irb(main) > study.public = true # or study.public = false to make it false
+irb(main) > study.save
+```
+
 ## Roadmap
