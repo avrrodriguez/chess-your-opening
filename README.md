@@ -25,13 +25,22 @@ You can test web requests as documented in the `requests.http` file.
 rails server
 ```
 
-- To make studies public or private change it through the rails console.
+- To make studies public or private change it through the rails console. The number inside find is replaced by the id of the study whos public you want to change.
 
 ```bash
 rails c
 irb(main) > study = Study.find(1)
-irb(main) > study.public = true # or study.public = false to make it false
+irb(main) > study.public = true # or study.public = false to make it private
 irb(main) > study.save
+```
+
+Follow the same steps for making a user an admin.
+
+```bash
+rails c
+irb(main) > user = User.find(1)
+irb(main) > user.admin = true # or user.admin = false if you want to remove admin
+irb(main) > user.save
 ```
 
 ## Roadmap
