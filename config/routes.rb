@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :studies
   resources :common_positions
   resources :resources
+  resources :posts
 
   post "/users", controller: "users", action: "create"
   post "/sessions", controller: "sessions", action: "create"

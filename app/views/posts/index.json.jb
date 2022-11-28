@@ -1,0 +1,8 @@
+@posts.map do |post|
+  image_url = PostSerializer.new(post).serializable_hash[:data][:attributes]
+  {
+    id: post.id,
+    url: post_url(post, format: :json),
+    image_url: image_url,
+  }
+end

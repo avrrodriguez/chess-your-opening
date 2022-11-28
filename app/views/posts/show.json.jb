@@ -1,0 +1,7 @@
+image_url = PostSerializer.new(post).serializable_hash[:data][:attributes]
+{
+  id: @post.id,
+  image_url: image_url
+  created_at: @post.created_at,
+  updated_at: @post.updated_at,
+}
