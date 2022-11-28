@@ -140,3 +140,7 @@ Authorization: Bearer {{admin}}
 
 ### chess query
 GET https://explorer.lichess.ovh/lichess?variant=standard&speeds=rapid,classical&ratings=2600&fen=rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2&recentGames=5
+
+
+### Post Get
+GET http://localhost:3000/posts.json
