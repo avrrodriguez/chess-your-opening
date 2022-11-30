@@ -1,10 +1,15 @@
 @openings.map do |opening|
+  posts = opening.posts.map do |post|
+    image_url = PostSerializer.new(post).serializable_hash[:data][:attributes]
+  end
+  opening_image = posts[0]
   {
     id: opening.id,
     name: opening.name,
     image_url: opening.image_url,
     description: opening.description,
     difficulty: opening.difficulty,
+    opening_image: opening_image,
     variation: opening.variation,
     resources: opening.resources,
     common_positions: opening.common_positions,
