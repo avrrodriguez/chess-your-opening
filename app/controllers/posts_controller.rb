@@ -16,7 +16,6 @@ class PostsController < ApplicationController
     @post = Post.new(
       title: params["title"],
       opening_id: params["opening_id"],
-      common_position_id: params["common_position_id"],
       image: params["image"],
     )
     p @post
