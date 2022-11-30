@@ -1,4 +1,8 @@
 @studies.map do |study|
+  posts = study.opening.posts.map do |post|
+    image_url = PostSerializer.new(post).serializable_hash[:data][:attributes]
+  end
+  opening_image = posts[0]
   {
     id: study.id,
     user_id: study.user_id,
@@ -6,6 +10,7 @@
     notes: study.notes,
     public: study.public,
     opening: study.opening,
+    opening_image: opening_image,
     resources: study.opening.resources,
     common_positions: study.opening.common_positions,
   }

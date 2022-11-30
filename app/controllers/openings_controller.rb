@@ -16,7 +16,6 @@ class OpeningsController < ApplicationController
   def create
     @opening = Opening.new(
       name: params["name"],
-      image_url: params["image_url"],
       description: params["description"],
       difficulty: params["difficulty"],
       variation: params["variation"],
@@ -32,7 +31,6 @@ class OpeningsController < ApplicationController
   def update
     @opening = Opening.find_by(id: params["id"])
     @opening.name = params["name"] || @opening.name
-    @opening.image_url = params["image_url"] || @opening.image_url
     @opening.description = params["description"] || @opening.description
     @opening.difficulty = params["difficulty"] || @opening.difficulty
     @opening.variation = params["variation"] || @opening.variation

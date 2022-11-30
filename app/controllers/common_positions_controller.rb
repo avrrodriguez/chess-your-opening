@@ -4,7 +4,6 @@ class CommonPositionsController < ApplicationController
   def create
     common_position = CommonPosition.new(
       description: params["description"],
-      image_url: params["image_url"],
       variation: params["variation"],
       opening_id: params["opening_id"],
       name: params["name"],
@@ -20,7 +19,6 @@ class CommonPositionsController < ApplicationController
   def update
     common_position = CommonPosition.find_by(id: params["id"])
     common_position.description = params["description"] || common_position.description
-    common_position.image_url = params["image_url"] || common_position.image_url
     common_position.variation = params["variation"] || common_position.variation
     common_position.opening_id = params["opening_id"] || common_position.opening_id
     common_position.name = params["name"] || common_position.name

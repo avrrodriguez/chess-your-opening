@@ -6,7 +6,6 @@
   {
     id: opening.id,
     name: opening.name,
-    image_url: opening.image_url,
     description: opening.description,
     difficulty: opening.difficulty,
     opening_image: opening_image,
