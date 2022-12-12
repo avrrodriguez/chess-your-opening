@@ -74,4 +74,28 @@ RSpec.describe "Openings", type: :request do
       expect(opening["variation"]).to eq("1. d4 d5 2. c4")
     end
   end
+
+  describe "POST /openings" do
+    it "returns a hash with appropriate attributes" do
+      user = User.create!(email: "capablanca@email.com", password: "password", admin: true)
+      jwt = JWT.encode(
+        {
+          user_id: user.id, # the data to encode
+          exp: 24.hours.from_now.to_i, # the expiration time
+        },
+        Rails.application.credentials.fetch(:secret_key_base), # the secret key
+        "HS256" # the encryption algorithm
+      )
+
+      post "/openings.json", params: {
+                               name: "Queen's Gambit",
+                               description: "White chooses to play the Queen’s Gambit because it gives him the opportunity to exchange his wing pawn to gain more control of the center. This leads to positions where White can constantly put pressure on his opponent. The Queen's Gambit can force black to either lose control of the center or having to play in a cramped position.",
+                               difficulty: "Beginner",
+                               variation: "1. d4 d5 2. c4",
+                             }, headers: { "Authorization" => "Bearer #{jwt}" }
+      opening = JSON.parse(response.body)
+
+      expect(response).to have_http_status(200)
+    end
+  end
 end
