@@ -20,6 +20,7 @@ rails db:create db:migrate db:seed
 You can test web requests as documented in the `requests.http` file.
 
 ## Usage
+In order to start the server, run the following code in the terminal in the base directory of the api.
 
 ```bash
 rails server
