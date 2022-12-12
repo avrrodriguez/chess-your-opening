@@ -43,7 +43,7 @@ irb(main) > user.admin = true # or user.admin = false if you want to remove admi
 irb(main) > user.save
 ```
 
-## Tests
+# Tests
 Run following code in order to test opening and studies actions
 ```
 bundle exec rspec
