@@ -20,6 +20,7 @@ rails db:create db:migrate db:seed
 You can test web requests as documented in the `requests.http` file.
 
 ## Usage
+In order to start the server, run the following code in the terminal in the base directory of the api.
 
 ```bash
 rails server
@@ -41,4 +42,10 @@ rails c
 irb(main) > user = User.find(1)
 irb(main) > user.admin = true # or user.admin = false if you want to remove admin
 irb(main) > user.save
+```
+
+### Tests
+Run following code in order to test opening and studies actions
+```
+bundle exec rspec
 ```
