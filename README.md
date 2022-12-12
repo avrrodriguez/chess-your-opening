@@ -42,3 +42,9 @@ irb(main) > user = User.find(1)
 irb(main) > user.admin = true # or user.admin = false if you want to remove admin
 irb(main) > user.save
 ```
+
+## Tests
+Run following code in order to test opening and studies actions
+```
+bundle exec rspec
+```
