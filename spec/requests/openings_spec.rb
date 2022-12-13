@@ -8,7 +8,7 @@ RSpec.describe "Openings", type: :request do
       expect(response).to have_http_status(200)
     end
 
-    it "returns an array of openings" do
+    before do
       Opening.create!(
         name: "Queen's Gambit",
         description: "White chooses to play the Queen’s Gambit because it gives him the opportunity to exchange his wing pawn to gain more control of the center. This leads to positions where White can constantly put pressure on his opponent. The Queen's Gambit can force black to either lose control of the center or having to play in a cramped position.",
@@ -22,7 +22,6 @@ RSpec.describe "Openings", type: :request do
         difficulty: "Medium",
         variation: "1. e4 e5 2. Nf3 Nc6 3. Bc4",
       )
-
       Opening.create!(
         name: "Four Knights Game",
         description: "The Four Knights is a double king pawn opening in which both players develop their knights to ideal squares, pointed towards the center. Formerly considered a bit of a dinosaur, this opening has become somewhat popular again recently; it can lead to either sharp attacks or closed, maneuvering struggles.",
@@ -36,7 +35,9 @@ RSpec.describe "Openings", type: :request do
         difficulty: "Hard",
         variation: "1. e4 c5",
       )
+    end
 
+    it "returns an array of openings" do
       get "/openings.json"
       openings = JSON.parse(response.body)
 

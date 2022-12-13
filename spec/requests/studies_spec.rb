@@ -63,7 +63,6 @@ RSpec.describe "Studies", type: :request do
 
       get "/studies.json"
       studies = JSON.parse(response.body)
-      studies = studies.filter { |study| study["public"] == true }
 
       expect(response).to have_http_status(200)
       expect(studies.length).to eq(2)
