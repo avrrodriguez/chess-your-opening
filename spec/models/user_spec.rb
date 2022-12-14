@@ -26,4 +26,14 @@ RSpec.describe User, type: :model do
 
     expect(user).to_not be_valid
   end
+
+  it "should have many studies" do
+    t = User.reflect_on_association(:studies)
+    expect(t.macro).to eq(:has_many)
+  end
+
+  it "should have many openings" do
+    t = User.reflect_on_association(:openings)
+    expect(t.macro).to eq(:has_many)
+  end
 end
