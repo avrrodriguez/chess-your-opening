@@ -32,4 +32,29 @@ RSpec.describe Opening, type: :model do
 
     expect(opening).to_not be_valid
   end
+
+  it "should have many studies" do
+    t = Opening.reflect_on_association(:studies)
+    expect(t.macro).to eq(:has_many)
+  end
+
+  it "should have many common positions" do
+    t = Opening.reflect_on_association(:common_positions)
+    expect(t.macro).to eq(:has_many)
+  end
+
+  it "should have many resources" do
+    t = Opening.reflect_on_association(:resources)
+    expect(t.macro).to eq(:has_many)
+  end
+
+  it "should have many posts" do
+    t = Opening.reflect_on_association(:posts)
+    expect(t.macro).to eq(:has_many)
+  end
+
+  it "should have many users" do
+    t = Opening.reflect_on_association(:users)
+    expect(t.macro).to eq(:has_many)
+  end
 end
