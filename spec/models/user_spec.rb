@@ -15,8 +15,8 @@ RSpec.describe User, type: :model do
   end
 
   it "email should be unique" do
+    user = User.create!(email: "email@test.com", password: "password")
     new_user = User.new(email: "email@test.com", password: "password")
-    new_user.save
 
     expect(new_user).to_not be_valid
   end
