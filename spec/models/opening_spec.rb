@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Opening, type: :model do
-  opening = Opening.new(name: "test name", description: "test description", difficulty: "test difficulty", variation: "test variation")
+  opening = FactoryBot.create(:opening)
 
   before { opening.save }
 

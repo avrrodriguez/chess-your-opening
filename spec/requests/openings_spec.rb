@@ -41,7 +41,7 @@ RSpec.describe "Openings", type: :request do
       get "/openings.json"
       openings = JSON.parse(response.body)
 
-      expect(openings.length).to eq(5)
+      expect(openings.length).to eq(6)
     end
   end
 
