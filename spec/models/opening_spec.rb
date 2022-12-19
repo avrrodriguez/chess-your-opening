@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Opening, type: :model do
-  opening = FactoryBot.create(:opening)
+  opening = FactoryBot.build(:opening)
 
   before { opening.save }
 
