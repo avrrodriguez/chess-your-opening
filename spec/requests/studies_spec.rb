@@ -2,13 +2,15 @@ require "rails_helper"
 
 RSpec.describe "Studies", type: :request do
   describe "GET /studies" do
-    it "returns an array of public studies" do
+    before do
       User.create!(
         email: "Gary@email.com",
         password: "password",
         image_url: "image.jepg",
       )
+    end
 
+    it "returns an array of public studies" do
       user1 = User.first
       user2 = User.second
 
