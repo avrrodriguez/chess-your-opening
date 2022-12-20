@@ -3,6 +3,7 @@ class OpeningsController < ApplicationController
 
   def index
     @openings = Opening.all.order(:id)
+    # binding.pry
 
     render template: "openings/index"
   end

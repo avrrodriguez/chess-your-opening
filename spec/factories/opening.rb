@@ -4,5 +4,9 @@ FactoryBot.define do
     description { Faker::Quotes::Shakespeare.hamlet_quote }
     difficulty { "Beginner" }
     variation { Faker::Alphanumeric.alphanumeric(number: 10) }
+
+    trait :medium do
+      difficulty { "Medium" }
+    end
   end
 end

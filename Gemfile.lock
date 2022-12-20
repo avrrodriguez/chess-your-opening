@@ -77,8 +77,15 @@ GEM
     builder (3.2.4)
     case_transform (0.2)
       activesupport
+    coderay (1.1.3)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    database_cleaner (2.0.1)
+      database_cleaner-active_record (~> 2.0.0)
+    database_cleaner-active_record (2.0.1)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     debug (1.6.3)
       irb (>= 1.3.6)
       reline (>= 0.3.1)
@@ -133,6 +140,9 @@ GEM
     nokogiri (1.13.9-x86_64-darwin)
       racc (~> 1.4)
     pg (1.4.4)
+    pry (0.14.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -205,6 +215,7 @@ DEPENDENCIES
   active_model_serializers
   bcrypt (~> 3.1.7)
   bootsnap
+  database_cleaner
   debug
   factory_bot_rails
   faker
@@ -214,6 +225,7 @@ DEPENDENCIES
   jsonapi-serializer (~> 2.2)
   jwt
   pg (~> 1.1)
+  pry
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4)
