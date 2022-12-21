@@ -21,6 +21,10 @@ RSpec.describe "Openings", type: :request do
   end
 
   describe "GET /openings/:id" do
+    before do
+      opening = FactoryBot.create(:opening)
+    end
+
     it "returns a 200 http status for show action" do
       opening = Opening.first
       get "/openings/#{opening.id}.json"
@@ -34,16 +38,19 @@ RSpec.describe "Openings", type: :request do
       get "/openings/#{opening.id}.json"
       opening = JSON.parse(response.body)
 
-      expect(opening["name"]).to eq("Queen's Gambit")
-      expect(opening["description"]).to eq("White chooses to play the Queen’s Gambit because it gives him the opportunity to exchange his wing pawn to gain more control of the center. This leads to positions where White can constantly put pressure on his opponent. The Queen's Gambit can force black to either lose control of the center or having to play in a cramped position.")
-      expect(opening["difficulty"]).to eq("Beginner")
-      expect(opening["variation"]).to eq("1. d4 d5 2. c4")
+      expect(opening["name"]).to eq(opening["name"])
+      expect(opening["description"]).to eq(opening["description"])
+      expect(opening["difficulty"]).to eq(opening["difficulty"])
+      expect(opening["variation"]).to eq(opening["variation"])
     end
   end
 
   describe "POST /openings" do
+    before do
+      user = FactoryBot.create(:user, :admin)
+    end
+
     it "returns a hash with appropriate attributes" do
-      user = User.first
       jwt = JWT.encode(
         {
           user_id: user.id, # the data to encode
@@ -81,7 +88,6 @@ RSpec.describe "Openings", type: :request do
     end
 
     it "returns unprocessable entity with bad data" do
-      user = User.first
       jwt = JWT.encode(
         {
           user_id: user.id, # the data to encode
@@ -99,9 +105,12 @@ RSpec.describe "Openings", type: :request do
   end
 
   describe "PATCH /openings/:id" do
+    before do
+      opening = FactoryBot.create(:opening)
+      user = FactoryBot.create(:user, :admin)
+    end
+
     it "returns a hash with updated values" do
-      user = User.first
-      opening = Opening.first
       jwt = JWT.encode(
         {
           user_id: user.id, # the data to encode
@@ -121,12 +130,9 @@ RSpec.describe "Openings", type: :request do
       expect(opening["variation"]).to eq("1. d4 d5 2. c4")
     end
 
-    xit "returns unauthorized when no jwt is provided (user is not logged in)" do
+    it "returns unauthorized when no jwt is provided (user is not logged in)" do
       user = User.first
-      opening = Opening.create!(name: "Queen's Gambit",
-                                description: "White chooses to play the Queen’s Gambit because it gives him the opportunity to exchange his wing pawn to gain more control of the center. This leads to positions where White can constantly put pressure on his opponent. The Queen's Gambit can force black to either lose control of the center or having to play in a cramped position.",
-                                difficulty: "Beginner",
-                                variation: "1. d4 d5 2. c4")
+      opening = FactoryBot.create(:opening)
       patch "/openings/#{opening.id}.json", params: { name: "new name" }
 
       error = JSON.parse(response.body)
@@ -136,9 +142,12 @@ RSpec.describe "Openings", type: :request do
   end
 
   describe "DELETE /openings/:id" do
+    before do
+      opening = FactoryBot.create(:opening)
+      user = FactoryBot.create(:user, :admin)
+    end
+
     it "returns a 200 status for delete action" do
-      user = User.first
-      opening = Opening.last
       jwt = JWT.encode(
         {
           user_id: user.id, # the data to encode

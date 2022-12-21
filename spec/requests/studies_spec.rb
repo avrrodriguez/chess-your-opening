@@ -3,11 +3,11 @@ require "rails_helper"
 RSpec.describe "Studies", type: :request do
   describe "GET /studies" do
     before do
-      User.create!(
-        email: "Gary@email.com",
-        password: "password",
-        image_url: "image.jepg",
-      )
+      # User.create!(
+      #   email: "Gary@email.com",
+      #   password: "password",
+      #   image_url: "image.jepg",
+      # )
     end
 
     it "returns an array of public studies" do
@@ -48,26 +48,26 @@ RSpec.describe "Studies", type: :request do
       opening1 = Opening.all[0]
       opening3 = Opening.all[2]
 
-      Study.create!(
-        user_id: user.id,
-        opening_id: opening1.id,
-        notes: "very good",
-        public: true,
-      )
+      # Study.create!(
+      #   user_id: user.id,
+      #   opening_id: opening1.id,
+      #   notes: "very good",
+      #   public: true,
+      # )
 
-      Study.create!(
-        user_id: user.id,
-        opening_id: opening3.id,
-        notes: "very nice",
-        public: false,
-      )
+      # Study.create!(
+      #   user_id: user.id,
+      #   opening_id: opening3.id,
+      #   notes: "very nice",
+      #   public: false,
+      # )
 
-      Study.create!(
-        user_id: user.id,
-        opening_id: opening3.id,
-        notes: "very nice",
-        public: true,
-      )
+      # Study.create!(
+      #   user_id: user.id,
+      #   opening_id: opening3.id,
+      #   notes: "very nice",
+      #   public: true,
+      # )
       jwt = JWT.encode(
         {
           user_id: user.id, # the data to encode
