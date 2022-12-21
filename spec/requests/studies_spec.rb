@@ -3,11 +3,7 @@ require "rails_helper"
 RSpec.describe "Studies", type: :request do
   describe "GET /studies" do
     before do
-      # User.create!(
-      #   email: "Gary@email.com",
-      #   password: "password",
-      #   image_url: "image.jepg",
-      # )
+      FactoryBot.create(:user, :admin)
     end
 
     it "returns an array of public studies" do
