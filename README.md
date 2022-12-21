@@ -9,6 +9,7 @@ This git hub repo is the back end for the application, you can find the front en
 - It is a RESTful API with MVC architecture built with Ruby on Rails.
 - It has User authentication using JSON web tokens.
 - It can store information about openings, studies, resources for openings, and common positions of openings.
+- Uses Factory Bot, Faker, and RSPEC for testing the code.
 
 ## Installation
 
@@ -45,7 +46,11 @@ irb(main) > user.save
 ```
 
 ### Tests
-Run following code in order to test opening and studies actions
+Uses RSPEC for testing the opening and study controllers as well as opening and user models. In order to create instances in testing database, factory bot in addition to faker gem were used to create random instances of studies, users, and openings for testing purposes.
+
+
+
+Run following code in order to run all tests
 ```
 bundle exec rspec
 ```
